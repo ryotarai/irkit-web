@@ -1,4 +1,4 @@
-class IrkitController < ApplicationController
+class MessagesController < ApplicationController
   def index
     @keys = ENV.keys.map do |key|
       if /^IRKIT_MESSAGE_(.+)$/ =~ key

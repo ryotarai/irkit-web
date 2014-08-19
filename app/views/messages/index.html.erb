@@ -1,0 +1,6 @@
+<h1>IrKit</h1>
+
+<%- @keys.each do |key| %>
+  <p><%= link_to key, post_messages_path(key: key), data: {method: "POST"} %></p>
+<%- end %>
+

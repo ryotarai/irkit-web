@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'irkit#index'
+  root 'messages#index'
   
-  resources :irkit, only: [] do
+  resources :messages, only: [] do
     collection do
       post 'post'
     end
