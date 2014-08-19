@@ -1,0 +1,2 @@
+module IrkitHelper
+end
