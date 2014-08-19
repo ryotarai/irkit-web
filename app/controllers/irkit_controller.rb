@@ -9,7 +9,7 @@ class IrkitController < ApplicationController
       if /^IRKIT_MESSAGE_(.+)$/ =~ key
         $1
       end
-    end.compact
+    end.compact.sort
   end
 
   def post
