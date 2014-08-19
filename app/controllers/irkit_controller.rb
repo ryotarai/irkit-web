@@ -1,10 +1,5 @@
 class IrkitController < ApplicationController
   def index
-    unless deviceid && clientkey
-      render text: "Please set IRKIT_DEVICEID and IRKIT_CLIENTKEY"
-      return
-    end
-
     @keys = ENV.keys.map do |key|
       if /^IRKIT_MESSAGE_(.+)$/ =~ key
         $1
@@ -26,15 +21,5 @@ class IrkitController < ApplicationController
       'deviceid' => deviceid,
       'message' => ENV["IRKIT_MESSAGE_#{key}"],
     }
-  end
-
-  private
-
-  def deviceid
-    ENV['IRKIT_DEVICEID']
-  end
-
-  def clientkey
-    ENV['IRKIT_CLIENTKEY']
   end
 end
